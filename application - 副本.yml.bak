@@ -1,0 +1,27 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hwm156542114/springcloud-config.git #上面的git仓库名字
+          search-paths:
+            - springcloud-config
+          skip-ssl-validation: true
+          username: 156542114@qq.com
+          password: hwm2000916..
+          default-label: main
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    hostname: config-center
